@@ -3,7 +3,7 @@
 <head>
     <title>Hide and Show in jQuery</title>
 
-    <!-- Google CDN -->
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <style>
@@ -69,12 +69,14 @@
 
     <div class="card">
         
-        <!-- Picture Above -->
-        <img id="profilePic" src="prumon.jpg" alt="Profile Picture">
+     <div class="profile">
+    <img id="profilePic" src="prumon.jpg" alt="Profile Picture">
+    <div id="placeholder" style="width:180px;height:180px;display:none;"></div>
+</div>
 
         <h2>Student Profile</h2>
 
-        <!-- Personal Information -->
+    
         <div class="info">
             <p><span class="label">ID Number:</span> 2025-10128</p>
             <p><span class="label">Firstname:</span> Rea Jane</p>
@@ -89,11 +91,11 @@
 $(document).ready(function(){
 
     $("#profilePic").mouseenter(function(){
-        $(this).hide();   // Hide when hovered
+        $(this).hide();
     });
 
-    $("#profilePic").mouseleave(function(){
-        $(this).show();   // Show when not hovered
+    $(".card").mouseleave(function(){
+        $("#profilePic").show();
     });
 
 });
